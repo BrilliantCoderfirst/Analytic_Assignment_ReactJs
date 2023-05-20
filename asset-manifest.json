@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Analytic_Assignment_ReactJs/static/css/main.d66e8b7e.css",
+    "main.js": "/Analytic_Assignment_ReactJs/static/js/main.bd98508e.js",
+    "index.html": "/Analytic_Assignment_ReactJs/index.html",
+    "main.d66e8b7e.css.map": "/Analytic_Assignment_ReactJs/static/css/main.d66e8b7e.css.map",
+    "main.bd98508e.js.map": "/Analytic_Assignment_ReactJs/static/js/main.bd98508e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d66e8b7e.css",
+    "static/js/main.bd98508e.js"
+  ]
+}
