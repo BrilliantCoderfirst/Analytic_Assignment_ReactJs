@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import SearchBox from './components/SearchBox';
+import Posts from './pages/Posts';
+import Comments from './pages/Comments';
+import Footer from './components/Footer';
+import { createContext, useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+
+const UseContextApi = createContext("");
 
 function App() {
+
+  const location = useLocation();
+  console.log(location.pathname);
+
+  const [inputSearchData, setInputSearchData] = useState('');
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+      <UseContextApi.Provider value={{ inputSearchData, setInputSearchData }}>
+          <Navbar />
+          {location.pathname === '/' ? (<SearchBox />) : (" ") }
+        <Routes>
+          <Route path='/' exact element={<Posts />} />
+          <Route path='/comments/:userId/:postId' exact element={<Comments />} />
+        </Routes>
+        <Footer />
+      </UseContextApi.Provider>
+
+    </>
   );
 }
 
-export default App;
+export { UseContextApi, App };
