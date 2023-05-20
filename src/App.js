@@ -22,9 +22,9 @@ function App() {
 
       <UseContextApi.Provider value={{ inputSearchData, setInputSearchData }}>
           <Navbar />
-          {location.pathname === '/' ? (<SearchBox />) : (" ") }
+          {location.pathname === '/Analytic_Assignment_ReactJs/' ? (<SearchBox />) : (" ") }
         <Routes>
-          <Route path='/' exact element={<Posts />} />
+          <Route path='/Analytic_Assignment_ReactJs/' exact element={<Posts />} />
           <Route path='/comments/:userId/:postId' exact element={<Comments />} />
         </Routes>
         <Footer />
